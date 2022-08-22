@@ -1,0 +1,67 @@
+{
+	"info": {
+		"_postman_id": "251d4d06-aab1-4067-b18c-5a9f277ee207",
+		"name": "Micorservices v1 and v2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:9192/order/bookOrder",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"order\":{\r\n        \"id\":\"104\",\r\n        \"name\":\"Earphone\",\r\n        \"qty\":1,\r\n        \"price\":8000\r\n    },\r\n    \"payment\":{}\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9192/order/bookOrder",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9192",
+					"path": [
+						"order",
+						"bookOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9191/payment/doPayment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"paymentStatus\":\"success\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/payment/doPayment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"payment",
+						"doPayment"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

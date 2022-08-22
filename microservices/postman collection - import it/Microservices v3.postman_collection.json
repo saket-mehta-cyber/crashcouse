@@ -1,0 +1,58 @@
+{
+	"info": {
+		"_postman_id": "a5f9720b-e29d-49e9-bef2-6cf851316c85",
+		"name": "Microservices v3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8989/order/bookOrder",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"order\":{\r\n        \"id\":\"105\",\r\n        \"name\":\"Earphone\",\r\n        \"qty\":1,\r\n        \"price\":8000\r\n    },\r\n    \"payment\":{}\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8989/order/bookOrder",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8989",
+					"path": [
+						"order",
+						"bookOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8989/payment/105",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8989/payment/105",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8989",
+					"path": [
+						"payment",
+						"105"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
