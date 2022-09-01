@@ -1,0 +1,43 @@
+
+<p>This from demo component</p>
+
+<!-- ONE WAY DATA BINDING -->
+<!-- interpolation -->
+<p>Addition of 2 + 2 is {{2+2}} </p>
+
+<!-- interpolation -->
+<p>This our new {{course}} course!!</p>
+
+<!-- event binding -->
+<button (click)="changeName()">Click here to change!!</button>
+
+<br>
+<br>
+
+<!-- property binding -->
+<img [src]='url' [alt]="alternateText">
+
+<br>
+<br>
+
+
+<!-- Style Binding -->
+<!-- [style.styleProperty] -->
+<button [style.color]="isValid ? 'blue': 'red'">Hooray!</button>
+  
+<br><br>
+
+<!-- TWO WAY DATA BINDING -->
+<!-- Two way data Binding using ngModel -->
+
+<input type="text" [(ngModel)]="name"> <br>
+<div>Hello , {{name}}</div>
+
+<br>
+<br>
+
+
+
+
+
+
