@@ -1,0 +1,16 @@
+<table border="1">
+    <thead>
+        <tr>
+            <th>Course ID</th>
+            <th>Course Name</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let course of coursesList">
+            <td>{{ course.courseId }}</td>
+            <td>{{ course.courseName }}</td>
+            <td><button (click)="registerEvent.emit(course)">Register</button></td>
+        </tr>
+    </tbody>
+</table>

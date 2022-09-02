@@ -1,0 +1,8 @@
+<h2>ngFor demo - structural directive</h2>
+<h3>Child Component</h3>
+
+<ul>
+  <li *ngFor="let course of courses; let i = index">
+    {{ i }} - {{ course.name }}
+  </li>
+</ul>

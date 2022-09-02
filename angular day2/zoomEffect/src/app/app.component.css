@@ -1,0 +1,10 @@
+.applyClass{
+    border: 1px solid blue;
+    background-color: lightcoral;
+}
+.container-fluid{
+    /* margin: auto; */
+    display: flex;
+    justify-content: center;
+    
+}

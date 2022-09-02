@@ -1,0 +1,20 @@
+<h2>ngStyle and ngClass</h2>
+<h3>Child Component</h3>
+
+<p [ngStyle]="{
+    color:colorName,
+    'font-weight':fontWeight,
+    borderBottom: borderStyle
+}">
+Demo for attribute directive ngStyle
+</p>
+
+<div [ngClass]="['bordered']">
+    Border 1st way
+  </div>
+<br><br>
+  <div [ngClass]="{bordered: isBordered}">
+    Border 2nd way
+  </div>
+   
+  

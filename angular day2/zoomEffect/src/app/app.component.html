@@ -1,0 +1,44 @@
+<!-- <h2>Courses List</h2>
+<app-child [coursesList]="courses" (registerEvent)="courseReg($event)"></app-child>
+<br /><br />
+<div *ngIf="message">{{ message }}</div> -->
+
+<div class="container-fluid" style="margin-top: 100px;">
+    <div class="row">
+        <div class="col-md-3 col-sm-3">
+            <div class="card" [appMagnify]="magnify">
+                <img class="card-img-top img-fluid" src="../assets/flower8.jpg" width="150" height="150" alt="">
+                <!-- <div class="card-body"> -->
+                    <!-- <img src="../assets/flower1.jpg" width="150" height="150" alt=""> -->
+                <!-- </div> -->
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-3">
+            <div class="card" [appMagnify]="magnify">
+                <img class="card-img-top img-fluid" src="../assets/flower5.jpg" width="150" height="150" alt="">
+                <!-- <div class="card-body">
+                    <img src="../assets/flower2.jpg" width="150" height="150" alt="">
+                </div> -->
+            </div>
+            
+        </div>
+        <div class="col-md-3 col-sm-3">
+            <div class="card" [appMagnify]="magnify">
+                <img class="card-img-top img-fluid" src="../assets/flower6.jpg" width="150" height="150" alt="">
+                <!-- <div class="card-body">
+                    <img src="../assets/flower3.jpg" width="150" height="150" alt="">
+                </div> -->
+            </div>
+            
+        </div>
+        <div class="col-md-3 col-sm-3">
+            <div class="card" [appMagnify]="magnify">
+                <img class="card-img-top img-fluid" src="../assets/flower7.jpg" width="150" height="150" alt="">
+                <!-- <div class="card-body">
+                    <img src="../assets/flower4.jpg" width="150" height="150" alt="">
+                </div> -->
+            </div>
+            
+        </div>
+    </div>
+</div>
