@@ -1,0 +1,24 @@
+<div class="container">
+
+
+
+  <br>
+  <button class="btn btn-primary" (click)="register()">Register a Student</button>
+  <br>
+  <br>
+  <button class="btn btn-success" (click)="get()">Get Student</button>
+
+  <div *ngIf="registerPage">
+    <app-registration-form></app-registration-form>
+  </div>
+
+  <div *ngIf="getStudentPage">
+    <app-get-students></app-get-students>
+  </div>
+ 
+
+  <br>
+</div>
+
+
+<!-- <router-outlet></router-outlet> -->

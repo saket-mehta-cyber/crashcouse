@@ -1,0 +1,26 @@
+
+
+<br>
+<br>
+
+<table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Index</th>
+        <th scope="col">Email</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Fav Subject</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let s of studentDetails;let i=index">
+        <td>{{i+1}}</td>
+        <td>{{s.email}}</td>
+        <td>{{s.firstName}}</td>
+        <td>{{s.lastName}}</td>
+        <td>{{s.favSubject}}</td>
+      </tr>
+      
+    </tbody>
+  </table>
