@@ -1,0 +1,9 @@
+Refer these pages to find all imp ng generate commands 
+for service,directive,components...etc
+
+
+https://angular.io/cli/generate#service
+
+https://angular.io/cli/generate#component
+
+https://angular.io/cli/generate#directive
