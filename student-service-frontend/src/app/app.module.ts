@@ -10,11 +10,13 @@ import { RegistrationService } from './registration.service';
 import { GetStudentsComponent } from './get-students/get-students.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationFormComponent,
     GetStudentsComponent,
+   
    
   ],
   imports: [

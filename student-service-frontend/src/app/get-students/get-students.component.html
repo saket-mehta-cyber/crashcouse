@@ -1,26 +1,72 @@
-
-
 <br>
 <br>
 
-<table class="table table-dark">
-    <thead>
-      <tr>
-        <th scope="col">Index</th>
-        <th scope="col">Email</th>
-        <th scope="col">First Name</th>
-        <th scope="col">Last Name</th>
-        <th scope="col">Fav Subject</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let s of studentDetails;let i=index">
-        <td>{{i+1}}</td>
-        <td>{{s.email}}</td>
-        <td>{{s.firstName}}</td>
-        <td>{{s.lastName}}</td>
-        <td>{{s.favSubject}}</td>
-      </tr>
-      
-    </tbody>
-  </table>
+
+<table *ngIf="!updateFormView" class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Index</th>
+      <th scope="col">Email</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Fav Subject</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let s of studentDetails;let i=index">
+      <td>{{i+1}}</td>
+      <td>{{s.email}}</td>
+      <td>{{s.firstName}}</td>
+      <td>{{s.lastName}}</td>
+      <td>{{s.favSubject}}</td>
+      <td><button (click)="deleteStudent(s.email)" class="btn btn-outline-danger btn-sm">Delete</button>
+        &nbsp;
+        <button (click)="update(s)" class="btn btn-outline-success btn-sm">Update</button>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+
+
+<!-- form -->
+
+<form [formGroup]="registerForm" *ngIf="updateFormView">
+  <h1>Updation Form</h1>
+
+  <div class="col-md-4">
+
+    <div class="form-group">
+      <label>First Name</label>
+      <input type="text" class="form-control form-control-sm" formControlName="firstName" />
+      <p *ngIf="(registerForm.controls['firstName'].dirty ||
+                      registerForm.controls['firstName'].touched || 
+                      registerForm.controls['firstName'].pristine) &&
+                      registerForm.controls['firstName'].errors" class="text-danger">
+        This field is required!
+      </p>
+    </div>
+    <div class="form-group">
+      <label>Last Name</label>
+      <input type="text" class="form-control form-control-sm" formControlName="lastName" />
+      <p *ngIf="(registerForm.controls['lastName'].dirty ||
+                     registerForm.controls['lastName'].touched|| 
+                     registerForm.controls['lastName'].pristine) &&
+                     registerForm.controls['lastName'].errors" class="text-danger">
+        This field is required!
+      </p>
+    </div>
+    <div class="form-group">
+      <label>Fav Subject</label>
+      <input type="text" class="form-control form-control-sm" formControlName="favSubject" />
+
+    </div>
+
+    <br>
+    <button [disabled]="registerForm.invalid" type="submit" class="btn btn-primary" (click)="updateStudent()">
+      Update
+    </button>
+  </div>
+
+</form>

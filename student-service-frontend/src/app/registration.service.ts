@@ -26,4 +26,13 @@ export class RegistrationService {
     return this.http.get('http://localhost:8082/api/students',httpOptions);
       
   }
+
+  deleteStudent(email){
+    return this.http.delete('http://localhost:8082/api/student/'+email);
+  }
+  updateStudent(email,student){
+    console.log(email);
+    
+    return this.http.put('http://localhost:8082/api/student/'+email,student);
+  }
 }

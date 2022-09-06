@@ -40,14 +40,15 @@ public class StudentController {
 	}
 	
 	@GetMapping("/students")
-	public ResponseEntity<List<Student>> getStudent() throws StudentServiceException {
-		List<Student> list=service.getAllStudents();
-		return  new ResponseEntity<List<Student>>(list, HttpStatus.OK);
+	public ResponseEntity<?> getStudent() throws StudentServiceException {
+//		List<Student> list=service.getAllStudents();
+		return  new ResponseEntity<>(service.getAllStudents(), HttpStatus.OK);
 		
 	}
 	
 	@PutMapping("/student/{email}")
 	public ResponseEntity<?> updateStudent(@Valid @RequestBody Student student,@Email(message = "{Please provide valid email address}")  @PathVariable String email) throws StudentServiceException {
+		
 		return  new ResponseEntity<>(service.updateStudent(student, email), HttpStatus.OK);
 		
 	}
@@ -55,7 +56,7 @@ public class StudentController {
 	@DeleteMapping("/student/{email}")
 	public ResponseEntity<?> deleteStudent(@Email(message = "{Please provide valid email address}") @PathVariable String email) throws StudentServiceException {
 		service.deleteStudent(email);
-		return  new ResponseEntity<>("Student is deleted", HttpStatus.OK);
+		return  new ResponseEntity<>(service.getAllStudents(), HttpStatus.OK);
 		
 	}
 
